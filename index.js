@@ -70,7 +70,7 @@ let posts = [
 const PORT = 8080;
 
 http.createServer(function (req, res) {
-    console.log(`Received request for ${req.url}`);
+
     
     if (req.url === '/posts') {
         res.writeHead(200, {'Content-Type': 'application/json'});
@@ -96,7 +96,5 @@ http.createServer(function (req, res) {
         res.write(JSON.stringify({ error: 'Invalid endpoint' }));
         res.end();
     }
-}).listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
-});
+}).listen(PORT)
 
